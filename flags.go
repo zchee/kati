@@ -14,12 +14,17 @@
 
 package kati
 
-import "os"
+var (
+	LogFlag           bool
+	StatsFlag         bool
+	PeriodicStatsFlag bool
+	EvalStatsFlag     bool
 
-func exists(filename string) bool {
-	_, err := os.Stat(filename)
-	if os.IsNotExist(err) {
-		return false
-	}
-	return true
-}
+	DryRunFlag bool
+
+	UseFindCache     bool
+	UseWildcardCache bool
+	UseShellBuiltins bool
+
+	IgnoreOptionalInclude string
+)
